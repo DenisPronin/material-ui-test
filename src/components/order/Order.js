@@ -1,5 +1,4 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
@@ -14,8 +13,9 @@ import Stakeholders from './Stakeholders';
 import Message from './Message';
 import Files from './Files';
 import ShareIcon from '@material-ui/icons/Share';
+import makeStyles from '@material-ui/core/styles/makeStyles';
 
-const styles = (theme) => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     margin: 0,
   },
@@ -24,21 +24,24 @@ const styles = (theme) => ({
     right: theme.spacing(1),
     top: theme.spacing(1),
   },
-});
-
-const DialogTitle = withStyles(styles)((props) => {
-  const {children, classes, onClose, ...other} = props;
-  return (
-    <MuiDialogTitle disableTypography className={classes.root} {...other}>
-      <Typography variant="h6">{children}&nbsp;</Typography>
-      <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
-        <CloseIcon/>
-      </IconButton>
-    </MuiDialogTitle>
-  );
-});
+  dialogActions: {
+    justifyContent: 'flex-start',
+    padding: '8px 24px'
+  },
+  actionBtn: {
+    width: '110px',
+    '&:not(:first-child)': {
+      marginLeft: '16px'
+    }
+    
+  },
+  shareBtn: {
+    marginLeft: 'auto !important'
+  }
+}));
 
 function Order() {
+  const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   
   const handleClickOpen = () => {
@@ -53,8 +56,13 @@ function Order() {
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>Open dialog</Button>
       
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open} maxWidth='sm' fullWidth>
-        
-        <DialogTitle id="customized-dialog-title" onClose={handleClose}/>
+  
+        <MuiDialogTitle disableTypography className={classes.root}>
+          <Typography variant="h6">&nbsp;</Typography>
+          <IconButton aria-label="close" className={classes.closeButton} onClick={handleClose}>
+            <CloseIcon/>
+          </IconButton>
+        </MuiDialogTitle>
         
         <MuiDialogContent>
           <Address />
@@ -70,16 +78,16 @@ function Order() {
         
         <Divider/>
         
-        <MuiDialogActions>
-          <Button variant="contained" onClick={handleClose} color="primary">
-            SIGN_OFF
+        <MuiDialogActions classes={{root: classes.dialogActions}} disableSpacing>
+          <Button variant="contained" onClick={handleClose} color="primary" className={classes.actionBtn}>
+            SIGN-OFF
           </Button>
-          <Button variant="outlined" onClick={handleClose} color="secondary">
+          <Button variant="outlined" onClick={handleClose} color="secondary" className={classes.actionBtn}>
             REJECT
           </Button>
   
-          <IconButton aria-label="share">
-            <ShareIcon fontSize="large" />
+          <IconButton aria-label="share" size='medium' classes={{root: classes.shareBtn}}>
+            <ShareIcon />
           </IconButton>
         </MuiDialogActions>
       </Dialog>
