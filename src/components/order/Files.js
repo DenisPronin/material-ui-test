@@ -24,8 +24,17 @@ const useStyles = makeStyles((theme) => ({
     marginRight: '16px',
     width: '120px'
   },
+  chipRoot: {
+    justifyContent: 'flex-start'
+  },
   chipIcon: {
     color: '#009688'
+  },
+  chipLabel: {
+    fontSize: '10px',
+    lineHeight: '12px',
+    letterSpacing: '0.02em',
+    color: 'rgba(0, 0, 0, 0.6)'
   }
 }));
 
@@ -54,7 +63,7 @@ function Files() {
               icon={<ImageIcon fontSize="small" />}
               label={file.fileName}
               className={classes.chip}
-              classes={{icon: classes.chipIcon}}
+              classes={{root: classes.chipRoot, icon: classes.chipIcon, label: classes.chipLabel}}
             />
           );
         })}
