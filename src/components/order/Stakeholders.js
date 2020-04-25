@@ -1,6 +1,6 @@
 import React from 'react';
+import classnames from 'classnames';
 import makeStyles from '@material-ui/core/styles/makeStyles';
-
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -34,6 +34,9 @@ const useStyles = makeStyles((theme) => ({
   },
   decorated: {
     textDecoration: 'line-through'
+  },
+  disabled: {
+    color: 'rgba(0, 0, 0, 0.5)'
   }
 }));
 
@@ -68,6 +71,10 @@ function Stakeholders() {
       >
         <List component="nav" aria-label="main mailbox folders" disablePadding>
           {users.map((user, i) => {
+            const userClasses = classnames({
+              [classes.decorated]: user.status === 'declined',
+              [classes.disabled]: user.status === 'pending'
+            });
             return (
               <ListItem key={`user-${i}`} disableGutters classes={{root: classes.listItem}}>
                 <ListItemIcon classes={{root: classes.listItemIcon}}>
@@ -77,7 +84,7 @@ function Stakeholders() {
                 </ListItemIcon>
                 <ListItemText
                   classes={{root: classes.userInfoRoot, primary: classes.userInfo}}
-                  className={user.status === 'declined' ? classes.decorated: ''}
+                  className={userClasses}
                   primary={`${user.username} (${user.email})`}
                 />
               </ListItem>

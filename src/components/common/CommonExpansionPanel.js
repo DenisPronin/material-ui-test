@@ -19,10 +19,14 @@ const useStyles = makeStyles((theme) => ({
 
 function CommonExpansionPanel(props) {
   const classes = useStyles();
+  const [expanded, setExpanded] = React.useState(true);
   
   return (
     <div>
-      <ExpansionPanel expanded>
+      <ExpansionPanel
+        expanded={expanded}
+        onChange={(event, isExpanded) => setExpanded(isExpanded)}
+      >
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"

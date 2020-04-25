@@ -22,7 +22,8 @@ const useStyles = makeStyles((theme) => ({
   },
   subTitle: {
     lineHeight: '14px',
-    marginBottom: '20px'
+    marginBottom: '20px',
+    color: 'rgba(0, 0, 0, 0.6)'
   }
 }));
 
