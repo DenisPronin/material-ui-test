@@ -72,7 +72,7 @@ function Stakeholders() {
     <div>
       <ExpansionPanel expanded>
         <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon fontSize='small' />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
