@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "//my-app/static/css/main.e1305a31.chunk.css",
+    "main.js": "//my-app/static/js/main.f37831d9.chunk.js",
+    "main.js.map": "//my-app/static/js/main.f37831d9.chunk.js.map",
+    "runtime-main.js": "//my-app/static/js/runtime-main.8f467613.js",
+    "runtime-main.js.map": "//my-app/static/js/runtime-main.8f467613.js.map",
+    "static/js/2.e87dd9b5.chunk.js": "//my-app/static/js/2.e87dd9b5.chunk.js",
+    "static/js/2.e87dd9b5.chunk.js.map": "//my-app/static/js/2.e87dd9b5.chunk.js.map",
+    "index.html": "//my-app/index.html",
+    "precache-manifest.f927e9dfd872e7e8f48f0a705cd9a029.js": "//my-app/precache-manifest.f927e9dfd872e7e8f48f0a705cd9a029.js",
+    "service-worker.js": "//my-app/service-worker.js",
+    "static/css/main.e1305a31.chunk.css.map": "//my-app/static/css/main.e1305a31.chunk.css.map",
+    "static/js/2.e87dd9b5.chunk.js.LICENSE.txt": "//my-app/static/js/2.e87dd9b5.chunk.js.LICENSE.txt",
+    "static/media/street.jpg": "//my-app/static/media/street.9f27cedf.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8f467613.js",
+    "static/js/2.e87dd9b5.chunk.js",
+    "static/css/main.e1305a31.chunk.css",
+    "static/js/main.f37831d9.chunk.js"
+  ]
+}
