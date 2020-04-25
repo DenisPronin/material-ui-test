@@ -21,7 +21,8 @@ const useStyles = makeStyles((theme) => ({
   chip: {
     borderRadius: 0,
     backgroundColor: 'rgba(26, 35, 126, 0.1)',
-    marginRight: '16px'
+    marginRight: '16px',
+    width: '120px'
   },
   chipIcon: {
     color: '#009688'
@@ -35,7 +36,7 @@ function Files() {
       fileName: 'Site photo'
     },
     {
-      fileName: 'Louver design..'
+      fileName: 'Louver design'
     }
   ];
   
