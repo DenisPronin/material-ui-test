@@ -10,6 +10,23 @@ const theme = createMuiTheme({
   palette: {
     primary: teal,
     secondary: deepOrange,
+  },
+  overrides: {
+    MuiExpansionPanel: {
+      root: {
+        boxShadow: 'none'
+      }
+    },
+    MuiExpansionPanelDetails: {
+      root: {
+        padding: 0
+      }
+    },
+    MuiExpansionPanelSummary: {
+      root: {
+        padding: 0
+      }
+    }
   }
 });
 

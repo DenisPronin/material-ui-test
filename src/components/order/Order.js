@@ -55,7 +55,7 @@ function Order() {
     <div>
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>Open dialog</Button>
       
-      <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open} maxWidth='sm' fullWidth>
+      <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open} maxWidth='xs' fullWidth>
   
         <MuiDialogTitle disableTypography className={classes.root}>
           <Typography variant="h6">&nbsp;</Typography>
